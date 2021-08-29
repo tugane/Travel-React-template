@@ -76,6 +76,7 @@ const SearchBtn = styled.button`
     ${
         tw`
             bg-white
+            hover:bg-opacity-90
             lg:w-3/12
             w-full
             py-2

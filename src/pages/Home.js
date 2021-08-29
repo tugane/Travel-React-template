@@ -3,14 +3,27 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import ImgSlider from '../components/ImgSlideer';
 import Search from '../components/Search';
-
+import SpecialOffer from '../Sections/SpecialOffer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import PopularDestinations from '../Sections/PopularDestinations';
+import TourPages from '../Sections/TourPages';
 function Home() {
     return (
+      <Router>
         <Container>
             <Header/>
             <ImgSlider/>
             <Search/>
+            <SpecialOffer/>
+            <PopularDestinations/>
+            <TourPages/>
         </Container>
+      </Router>
     )
 }
 

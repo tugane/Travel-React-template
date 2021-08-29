@@ -1,14 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro';
-import { FaBars,FaSearch,FaRegWindowClose } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
+import { FaBars,FaSearch } from "react-icons/fa";
 
 function Header() {
-    let ShowNav = false;
-    const ToggleNav = ( () =>{
-        ShowNav = !ShowNav
-        console.log(ShowNav);
-    })
+    const [BurgerStatus, SetBurgerStatus] = useState(false);
     return (
         <HomeHeader>
         <Nav>
@@ -31,15 +28,17 @@ function Header() {
                 </a>
             </NavMenu>
             <RightMenu>
-                <span>
-                    <FaSearch></FaSearch>
-                </span>
-                <span onClick={ToggleNav}>
+                <span onClick={() => SetBurgerStatus(true)}>
                     <FaBars></FaBars>
                 </span>
             </RightMenu>
         </Nav>
-        <MoblieNav>
+        <MoblieNav show={BurgerStatus}>
+            <CloseMobile>
+                <span onClick={()=>SetBurgerStatus(false)}>
+                    <AiOutlineClose></AiOutlineClose>
+                </span>
+            </CloseMobile>
             <a href="#">
                 <span>Home</span>
             </a>
@@ -55,11 +54,6 @@ function Header() {
             <a href="#">
                 <span>About us</span>
             </a>
-            <CloseMobile>
-                <span onClick={ToggleNav}>
-                    <FaRegWindowClose></FaRegWindowClose>
-                </span>
-            </CloseMobile>
         </MoblieNav>
         </HomeHeader>
     )
@@ -135,11 +129,11 @@ const NavMenu = styled.div`
 `;
 const MoblieNav = styled.div`
    ${tw`
-        hidden
+        lg:hidden
         bg-dark
         fixed
         w-full
-        p-10
+        p-7
     `}
     z-index: 2;
     height: 100vh;
@@ -147,6 +141,10 @@ const MoblieNav = styled.div`
     left:0;
     right:0;
     line-height: 40px;
+    transform-origin: left center;
+    transform: ${props => props.show ? 'scaleX(1)' : 'scaleX(0)'};
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.90) 0s;
+    visibility: visible;
     a{
         ${tw`
             text-center
@@ -205,15 +203,15 @@ const RightMenu = styled.div`
     }
 `;
 const CloseMobile = styled.div`
-    margin-top: 20px;
-    color:white;
+    margin-bottom: 40px;
+    color: white;
     bottom: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     text-align: center;
     span{
         cursor: pointer;
-        font-size: 40px;
+        font-size: x-large;
     }
 `;
 
