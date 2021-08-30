@@ -1,42 +1,40 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components';
-import { AiFillStar } from "react-icons/ai";
 import tw from 'twin.macro';
+import ReactStars from "react-rating-stars-component";
+import AOS from 'aos';
 import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
 
 function Tour(props) {
+    useEffect(() => {
+        AOS.init({
+            duration : 1000
+        });
+    }, []);
+    
+    const ratingChanged = (newRating) => {
+        console.log(newRating);
+      };
     return (
         <Link to="#">
             <Wrap>
-                <Img src={props.img}/>
-                <Title>{props.title}</Title>
-                <Activities>{props.activities}</Activities>
-                <Stars>
-                    <StarWrap>
-                        <AiFillStar/>
-                    </StarWrap>
-                    <StarWrap>
-                        <AiFillStar/>
-                    </StarWrap>
-                    <StarWrap>
-                        <AiFillStar/>
-                    </StarWrap>
-                    <StarWrap>
-                        <AiFillStar/>
-                    </StarWrap>
-                    <StarWrap>
-                        <AiFillStar/>
-                    </StarWrap>
+                <ImgWrap  data-aos="fade-up">
+                    <Img src={props.img}/>
+                </ImgWrap>
+                <Title data-aos="fade-up">{props.title}</Title>
+                <Activities data-aos="fade-up">{props.activities}</Activities>
+                <Stars data-aos="fade-up">
+                    <ReactStars count={10} size={30} value={6} onChange={ratingChanged} activeColor="#ffd700"/>
                 </Stars>
                 <BottomTextWrap>
-                    <Price>
+                    <Price data-aos="fade-up">
                         {props.price}
                     </Price>
-                    <People>{props.people}</People>
-                    <Period>{props.period}</Period>
+                    <People data-aos="fade-up">{props.people}</People>
+                    <Period data-aos="fade-up">{props.period}</Period>
                 </BottomTextWrap>
             </Wrap>
         </Link>
@@ -46,16 +44,30 @@ const Wrap = styled.div`
     height: 500px;
     ${tw`
         overflow-hidden
+        capitalize
         px-1
     `}
     position: relative;
-
+`;
+const ImgWrap =styled.div`
+    height: calc(100% - 150px);
+    
+    &:hover{
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        border: 4px solid #ffd700;
+        transition-duration: 150ms;
+        padding: 0;
+    }
+    ${tw`
+        rounded-xl
+    `}
 `;
 const Img = styled.img`
     ${tw`
         rounded-lg
+        h-full
     `}
-    height: calc(100% - 150px);
     inset: 0px;
     display: block;
     object-fit: cover;
@@ -67,23 +79,20 @@ const Title = styled.h3`
     color: white;
     ${tw`
         pt-2
+        truncate
         text-xl
     `}
 `;
 const Stars = styled.div`
     ${
         tw`
-            flex
+            -mt-4
+            pb-0
         `
     }
-`;
-const StarWrap = styled.div`
-    ${tw`
-        text-white
-        text-2xl
-        mr-3
-        cursor-pointer
-    `}
+    span{
+        height: 42px;
+    }
 `;
 const Activities = styled.p`
     ${tw`
@@ -102,14 +111,22 @@ const BottomTextWrap = styled.div`
 const Price = styled.h3`
     ${tw`
         text-white
+        truncate
         md:text-xl
-        font-bold
     `}
 `;
 const People = styled.h3`
-
-`;
+    ${tw`
+        text-white
+        truncate
+        md:text-xl
+    `}
+`;  
 const Period = styled.h3`
-
+    ${tw`
+        text-white
+        truncate
+        md:text-xl
+    `}
 `;
 export default Tour

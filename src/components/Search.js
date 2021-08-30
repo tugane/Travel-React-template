@@ -1,26 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import { FaMapMarkerAlt,FaCalendarAlt,FaCaretDown } from "react-icons/fa";
+import { FaMapMarkerAlt,FaCaretDown } from "react-icons/fa";
 import tw from 'twin.macro';
+import AOS from 'aos';
 
 function Search() {
+    useEffect(() => {
+        AOS.init({
+            duration : 1000
+        });
+    }, []);
     return (
-        <Wrap>
-            <InputGroup>
-                <input type="text" placeholder="Where to ?" />
+        <Wrap data-aos="fade-down">
+            <InputGroup data-aos="fade-down">
+                <input data-aos="fade-down" type="text" placeholder="Where to ?" />
+                <IconWrap data-aos="fade-down">
+                    <FaMapMarkerAlt/>
+                </IconWrap>
             </InputGroup>
-            <InputGroup>
-                <input type="date" placeholder="Date" />
+            <InputGroup data-aos="fade-down">
+                <input data-aos="fade-down" type="date" placeholder="Date" />
             </InputGroup>
-            <InputGroup>
-                <select placeholder="Travel Type">
+            <InputGroup data-aos="fade-down">
+                <select data-aos="fade-down" placeholder="Travel Type">
                     <option>Travel Type</option>
                     <option>Travel 1</option>
                     <option>Travel 2</option>
                     <option>Travel 3</option>
                 </select>
+                <IconWrap data-aos="fade-down">
+                    <FaCaretDown/>
+                </IconWrap>
             </InputGroup>
-            <SearchBtn>
+            <SearchBtn data-aos="fade-down">
                 Find Now
             </SearchBtn>
         </Wrap>
@@ -38,6 +50,9 @@ const Wrap = styled.div`
     `}
 `;
 const InputGroup = styled.div`
+    ${tw`
+        relative
+    `}
     span{
         position: absolute;
         margin-top: 13px;
@@ -56,9 +71,11 @@ const InputGroup = styled.div`
             border-2
             rounded-md
             py-2
+            appearance-none
             w-full
             focus:outline-none
-            px-4
+            pl-4
+            pr-6
             my-2
             lg:my-0
             `
@@ -75,7 +92,7 @@ const SearchBtn = styled.button`
     color: #060b1d;
     ${
         tw`
-            bg-white
+            bg-yellow
             hover:bg-opacity-90
             lg:w-3/12
             w-full
@@ -84,6 +101,20 @@ const SearchBtn = styled.button`
             rounded-md
             font-bold
             lg:mx-4
+        `
+    }
+`;
+const IconWrap = styled.div`
+    ${
+        tw`
+            text-white
+            pointer-events-none 
+            absolute 
+            inset-y-0 
+            right-0 
+            flex 
+            items-center 
+            pr-5 
         `
     }
 `;

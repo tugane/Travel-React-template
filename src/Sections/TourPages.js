@@ -9,10 +9,10 @@ function TourPages() {
         <Container>
             <SectionHeader title="Tour Packages" linkText="View all"/>
             <Wrap>
-                <Tour title="Hong Kong" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (2).jpg"/>
-                <Tour title="Hong Kong" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (1).jpg"/>
-                <Tour title="Hong Kong" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (4).jpg"/>
-                <Tour title="Hong Kong" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (3).jpg"/>
+                <Tour title="New York, United Stated of America" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (15).jpg"/>
+                <Tour title="Dubai, United Arab Emarates" activities="Iconic, Shopping, City Tours and camping" price="$532" people="3 peoples" period="5 days" img="/img/img (1).jpg"/>
+                <Tour title="Hong Kong, China" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (4).jpg"/>
+                <Tour title="Tokyo, Japan" activities="Iconic, Shopping, City Tours" price="$532" people="3 peoples" period="5 days" img="/img/img (3).jpg"/>
             </Wrap>
         </Container>
     )
@@ -25,8 +25,7 @@ const Container = styled.section`
 const Wrap = styled.div`
     ${tw`
         grid 
-        grid-cols-2
-        md:grid-cols-3
+        grid-cols-1
         lg:grid-cols-4 
         gap-3
     `}

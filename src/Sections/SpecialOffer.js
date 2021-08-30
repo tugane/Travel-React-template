@@ -19,17 +19,17 @@ function SpecialOffer() {
 
 const Container = styled.section`
     ${tw`
-        py-5
+        pb-5
         text-white
     `}
 `;
 const Wrap = styled.div`
     ${tw`
         grid 
-        grid-cols-2
-        md:grid-cols-3
+        grid-cols-1
+        md:grid-cols-2
         lg:grid-cols-4 
-        gap-3
+        gap-4
     `}
 `;
 export default SpecialOffer

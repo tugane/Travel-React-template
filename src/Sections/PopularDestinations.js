@@ -1,85 +1,95 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro';
 import SectionHeader from '../components/SectionHeader';
+import AOS from 'aos';
 import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
 function PopularDestinations() {
+    useEffect(() => {
+        AOS.init({
+            duration : 1000
+        });
+    }, []);
+    
+    const ratingChanged = (newRating) => {
+        console.log(newRating);
+    };
     return (
         <Container>
             <SectionHeader title="Popular Destions" linkText="View all" />
             <DestinationWrap>
-                <Destination fullPage>
+                <Destination data-aos="fade-up" fullPage>
                     <img src="/img/img (7).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
-                            <Title>Dubai</Title>
+                            <Title data-aos="fade-up">Dubai</Title>
                         </TextWrap>
                         <BottomTextWrap>
-                            <Price>From $ 349</Price>
-                            <ToursNumber>54 tours</ToursNumber>
+                            <Price data-aos="fade-up">From $ 349</Price>
+                            <ToursNumber data-aos="fade-up">54 tours</ToursNumber>
                         </BottomTextWrap>
                     </DetailWrap>
                 </Destination>
-                <Destination double>
+                <Destination double data-aos="fade-up">
                     <img src="/img/img (16).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
-                            <Title>Dubai</Title>
+                            <Title data-aos="fade-up">Dubai</Title>
                         </TextWrap>
                         <BottomTextWrap>
-                            <Price>From $ 349</Price>
-                            <ToursNumber>54 tours</ToursNumber>
+                            <Price data-aos="fade-up">From $ 349</Price>
+                            <ToursNumber data-aos="fade-up">54 tours</ToursNumber>
                         </BottomTextWrap>
                     </DetailWrap>
                 </Destination>
-                <Destination double>
+                <Destination double data-aos="fade-left">
                     <img src="/img/img (10).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
-                            <Title>Dubai</Title>
+                            <Title data-aos="fade-up">Dubai</Title>
                         </TextWrap>
                         <BottomTextWrap>
-                            <Price>From $ 349</Price>
-                            <ToursNumber>54 tours</ToursNumber>
+                            <Price data-aos="fade-up">From $ 349</Price>
+                            <ToursNumber data-aos="fade-up">54 tours</ToursNumber>
                         </BottomTextWrap>
                     </DetailWrap>
                 </Destination>
-                <Destination triple>
+                <Destination triple data-aos="zoom-in-right">
                     <img src="/img/img (11).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
-                            <Title>Dubai</Title>
+                            <Title data-aos="fade-up">Dubai</Title>
                         </TextWrap>
                         <BottomTextWrap>
-                            <Price>From $ 349</Price>
-                            <ToursNumber>54 tours</ToursNumber>
+                            <Price data-aos="fade-up">From $ 349</Price>
+                            <ToursNumber data-aos="fade-up">54 tours</ToursNumber>
                         </BottomTextWrap>
                     </DetailWrap>
                 </Destination>
-                <Destination triple>
+                <Destination triple data-aos="fade-up">
                     <img src="/img/img (15).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
-                            <Title>Dubai</Title>
+                            <Title data-aos="fade-up">Dubai</Title>
                         </TextWrap>
                         <BottomTextWrap>
-                            <Price>From $ 349</Price>
-                            <ToursNumber>54 tours</ToursNumber>
+                            <Price data-aos="fade-up">From $ 349</Price>
+                            <ToursNumber data-aos="fade-up">54 tours</ToursNumber>
                         </BottomTextWrap>
                     </DetailWrap>
                 </Destination>
-                <Destination triple>
+                <Destination triple data-aos="zoom-in-left">
                     <img src="/img/img (19).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
-                            <Title>Dubai</Title>
+                            <Title data-aos="fade-up">Dubai</Title>
                         </TextWrap>
                         <BottomTextWrap>
-                            <Price>From $ 349</Price>
-                            <ToursNumber>54 tours</ToursNumber>
+                            <Price data-aos="fade-up">From $ 349</Price>
+                            <ToursNumber data-aos="fade-up">54 tours</ToursNumber>
                         </BottomTextWrap>
                     </DetailWrap>
                 </Destination>
@@ -97,7 +107,10 @@ const DestinationWrap = styled.div`
     `}
     ${
         tw`
-            grid grid-cols-12 gap-5
+            grid 
+            lg:grid-cols-12
+            grid-cols-6
+            gap-5
         `
     }
 `;
@@ -111,7 +124,16 @@ const Destination = styled.a`
     ${tw`
     cursor-pointer
         rounded-lg
+        hover:rounded-xl
     `}
+    
+    &:hover{
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        border: 4px solid #ffd700;
+        transition-duration: 150ms;
+        padding: 0;
+    }
 
     img{
         object-fit: cover;
@@ -126,7 +148,7 @@ const Destination = styled.a`
     ${props => props.fullPage ? 
         tw`
             col-span-6
-            md:col-span-12
+            lg:col-span-12
         `
     : false }
 
@@ -139,7 +161,7 @@ const Destination = styled.a`
     ${props => props.triple ? 
         tw`
             col-span-6
-            md:col-span-4
+            lg:col-span-4
         `
     : false }
 `;

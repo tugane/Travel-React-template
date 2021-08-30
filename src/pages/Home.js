@@ -12,33 +12,55 @@ import {
 } from "react-router-dom";
 import PopularDestinations from '../Sections/PopularDestinations';
 import TourPages from '../Sections/TourPages';
+import Blogs from '../Sections/Blogs';
+import tw from 'twin.macro';
+import About from '../Sections/About';
+import Newsleter from '../Sections/Newsleter';
+import Footer from '../Sections/Footer';
 function Home() {
     return (
       <Router>
-        <Container>
-            <Header/>
-            <ImgSlider/>
-            <Search/>
-            <SpecialOffer/>
-            <PopularDestinations/>
-            <TourPages/>
-        </Container>
+        <ContainerFluid>
+            <Wrap>
+              <Header/>
+              <ImgSlider/>
+              <Search/>
+              <SpecialOffer/>
+              <PopularDestinations/>
+              <TourPages/>
+              <Blogs/>
+              <About/>
+              <Newsleter/>
+            </Wrap>
+            <Footer/>
+        </ContainerFluid>
       </Router>
     )
 }
 
-
-const Container = styled.section`
+const ContainerFluid = styled.main`
+  ${tw`
+    font-mono
+    antialiased 
+    leading-loose
+    tracking-wide
+  `}
+  
   background-color: #060b1d;
-  height: 100vh;
-  width: 100%;
+  overflow-x: hidden;
+  top: 72px;
+
+  *::selection{
+    color: #ffd700;
+  }
+`;
+
+
+const Wrap = styled.section`
   padding-left: 80px;
   padding-right: 80px;
   padding-top: 30px;
   padding-bottom: 30px;
-  overflow-x: hidden;
-  display: block;
-  top: 72px;
   
   @media(max-width: 768px) {
     padding-left: 20px;

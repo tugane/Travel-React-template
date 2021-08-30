@@ -1,33 +1,39 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro';
+import AOS from 'aos';
 import { AiOutlineClose } from "react-icons/ai";
 import { FaBars,FaSearch } from "react-icons/fa";
 
 function Header() {
+    useEffect(() => {
+        AOS.init({
+            duration : 1000
+        });
+    }, []);
     const [BurgerStatus, SetBurgerStatus] = useState(false);
     return (
         <HomeHeader>
         <Nav>
-            <Logo src="/img/logo.png"/>
+            <Logo data-aos="fade-up" src="/img/logo.png"/>
             <NavMenu>
-                <a href="#">
+                <a data-aos="fade-up" href="/">
                     <span>Home</span>
                 </a>
-                <a href="#">
+                <a data-aos="fade-up" href="#">
                     <span>Destination</span>
                 </a>
-                <a href="#">
+                <a data-aos="fade-up" href="#">
                     <span>Tour Package</span>
                 </a>
-                <a href="#">
+                <a data-aos="fade-up" href="#">
                     <span>Contact</span>
                 </a>
-                <a href="#">
+                <a data-aos="fade-up" href="#">
                     <span>About us</span>
                 </a>
             </NavMenu>
-            <RightMenu>
+            <RightMenu data-aos="fade-up">
                 <span onClick={() => SetBurgerStatus(true)}>
                     <FaBars></FaBars>
                 </span>
@@ -39,19 +45,19 @@ function Header() {
                     <AiOutlineClose></AiOutlineClose>
                 </span>
             </CloseMobile>
-            <a href="#">
+            <a data-aos="fade-up" href="#">
                 <span>Home</span>
             </a>
-            <a href="#">
+            <a data-aos="fade-up" href="#">
                 <span>Destination</span>
             </a>
-            <a href="#">
+            <a data-aos="fade-up" href="#">
                 <span>Tour Package</span>
             </a>
-            <a href="#">
+            <a data-aos="fade-up" href="#">
                 <span>Contact</span>
             </a>
-            <a href="#">
+            <a data-aos="fade-up" href="#">
                 <span>About us</span>
             </a>
         </MoblieNav>
@@ -75,6 +81,7 @@ const NavMenu = styled.div`
     ${tw`
         lg:flex
         hidden
+        font-bold
     `}
 
     align-items: center;
@@ -95,14 +102,14 @@ const NavMenu = styled.div`
 
         span{
             color: rgb(249, 249, 249);
-            font-size: 13px;
+            font-size: 15px;
             letter-spacing: 0.2px;
             line-height: 2px 0px;
             white-space: nowrap;
             position: relative;
 
         &:before{
-            background-color: rgb(249, 249, 249);
+            background-color: #ffd700;
             border-radius: 0px 0px 4px 4px;
             bottom:  -6px;
             content: "";
@@ -194,10 +201,12 @@ const MoblieNav = styled.div`
 const RightMenu = styled.div`
     color:white;
     ${tw`
-        lg:hidden
         flex
     `}
     span{
+        ${tw`
+            lg:hidden
+        `}
         cursor: pointer;
         margin-left: 20px;
     }
