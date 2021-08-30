@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import ReactStars from "react-rating-stars-component";
 import AOS from 'aos';
 import {
-    BrowserRouter as Router,
+    BrowserRouter as 
     Link
   } from "react-router-dom";
 

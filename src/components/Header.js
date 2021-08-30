@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro';
 import AOS from 'aos';
 import { AiOutlineClose } from "react-icons/ai";
-import { FaBars,FaSearch } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 function Header() {
     useEffect(() => {

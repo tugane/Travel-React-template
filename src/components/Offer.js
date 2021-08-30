@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import {
-    BrowserRouter as Router,
+    BrowserRouter as 
     Link
   } from "react-router-dom";
 
@@ -94,12 +94,7 @@ const Stars = styled.div`
         height: 42px;
     }
 `;
-const StarWrap = styled.div`
-    ${tw`
-        text-2xl
-        cursor-pointer
-    `}
-`;
+
 const Price = styled.h3`
     ${tw`
         text-xl

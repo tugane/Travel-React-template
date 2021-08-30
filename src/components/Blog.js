@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import AOS from 'aos';
 import {
-    BrowserRouter as Router,
+    BrowserRouter as 
     Link
   } from "react-router-dom";
 

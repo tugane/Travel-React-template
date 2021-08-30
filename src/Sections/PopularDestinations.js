@@ -3,10 +3,6 @@ import styled from 'styled-components'
 import tw from 'twin.macro';
 import SectionHeader from '../components/SectionHeader';
 import AOS from 'aos';
-import {
-    BrowserRouter as Router,
-    Link
-  } from "react-router-dom";
 function PopularDestinations() {
     useEffect(() => {
         AOS.init({
@@ -14,9 +10,6 @@ function PopularDestinations() {
         });
     }, []);
     
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-    };
     return (
         <Container>
             <SectionHeader title="Popular Destions" linkText="View all" />
