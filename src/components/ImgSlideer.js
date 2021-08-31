@@ -102,7 +102,6 @@ function ImgSlider (props) {
 };
 
 const Carousel = styled(Slider)`
-  margin-top: 20px;
 
   & > button {
     opacity: 0;
@@ -153,9 +152,11 @@ const Wrap = styled.div`
   position: relative;
 
   a {
+    ${tw`
+      hover:shadow-2xl
+    `
+    }
     border-radius: 16px;
-    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
-      rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     cursor: pointer;
     display: block;
     position: relative;

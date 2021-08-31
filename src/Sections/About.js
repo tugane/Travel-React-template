@@ -12,7 +12,7 @@ function About() {
     return (
         <Container>
             <Wrap>
-                <TextWrap  data-aos="fade-down">
+                <TextWrap >
                     <h4 data-aos="fade-up">What Do You Know</h4>
                     <h1 data-aos="fade-up">About US</h1>
                     <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, iste. Esse alias, porro dolor nesciunt nostrum nemo ex consequuntur odio. Accusantium aut explicabo id ratione quis repellendus omnis accusamus? Facere.</p>
@@ -21,7 +21,7 @@ function About() {
                         <FaArrowRight/>
                     </Btn>
                 </TextWrap>
-                <img data-aos="fade-up" src="/img/img (8).jpg" alt="about img"/>
+                <img src="/img/img (8).jpg" alt="about img"/>
             </Wrap>
         </Container>
     )

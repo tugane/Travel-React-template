@@ -18,9 +18,9 @@ function Header() {
         <HomeHeader>
         <Nav>
             {colorTheme == 'dark' ?
-            <Logo data-aos="fade-up" src="/img/logo.png"/>
-            :
             <Logo data-aos="fade-up" src="/img/logo-dark.png"/>
+            :
+            <Logo data-aos="fade-up" src="/img/logo.png"/>
             }
             <NavMenu>
                 <a data-aos="fade-up" href="/">
@@ -104,7 +104,8 @@ const Nav = styled.nav`
     }
 `;
 const Logo = styled.img`
-    width: 80px;
+    width: 100px;
+    height: 40px;
 `;
 
 const NavMenu = styled.div`
@@ -239,12 +240,14 @@ const MoblieNav = styled.div`
 const RightMenu = styled.div`
     ${tw`
         flex
-        border-yellow
-        text-yellow
+        border-dark
+        text-dark
+        dark:border-white
+        dark:text-white
         border-2
         lg:border-none
         text-xl
-        rounded-full
+        rounded
         p-2
     `}
     span{
@@ -265,11 +268,13 @@ const ThemeWrap = styled.div`
 `;
 const Theme = styled.div`
     ${tw`
-        rounded-full
+        rounded
         absolute
-        lg:bg-yellow
-        lg:p-2
-        lg:text-dark
+        lg:dark:bg-white
+        lg:dark:text-dark
+        lg:bg-dark
+        lg:text-white
+        lg:p-1
         cursor-pointer
     `}
 `;
