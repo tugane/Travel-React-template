@@ -17,7 +17,11 @@ function Header() {
     return (
         <HomeHeader>
         <Nav>
+            {colorTheme == 'dark' ?
             <Logo data-aos="fade-up" src="/img/logo.png"/>
+            :
+            <Logo data-aos="fade-up" src="/img/logo-dark.png"/>
+            }
             <NavMenu>
                 <a data-aos="fade-up" href="/">
                     <span>Home</span>
@@ -90,7 +94,8 @@ const Nav = styled.nav`
     height: 80px;
     font-family: 'Nunito', sans-serif;
     ${tw`
-        bg-dark
+        dark:bg-dark
+        bg-white
     `}
     
     @media(max-width: 768px) {
@@ -125,7 +130,8 @@ const NavMenu = styled.div`
 
         span{
             ${tw`
-                text-white
+                dark:text-white
+                text-dark
             `}
             font-size: 18px;
             letter-spacing: 0.2px;
