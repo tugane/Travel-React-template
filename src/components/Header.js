@@ -1,11 +1,13 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState, useEffect} from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro';
 import AOS from 'aos';
 import { AiOutlineClose } from "react-icons/ai";
+import { HiSun,HiMoon } from "react-icons/hi";
 import { FaBars } from "react-icons/fa";
-
+import useDarkMode from '../hook/useDarkMode';
 function Header() {
+    const [colorTheme, setTheme] =  useDarkMode();
     useEffect(() => {
         AOS.init({
             duration : 1000
@@ -34,6 +36,17 @@ function Header() {
                 </a>
             </NavMenu>
             <RightMenu data-aos="fade-up">
+                <ThemeWrap>
+                    {colorTheme == 'dark' ?
+                        <Theme onClick={() => setTheme(colorTheme)}>
+                            <HiMoon/>
+                        </Theme>
+                    :
+                        <Theme onClick={() => setTheme(colorTheme)}>
+                            <HiSun/>
+                        </Theme>
+                    }
+                </ThemeWrap>
                 <span onClick={() => SetBurgerStatus(true)}>
                     <FaBars></FaBars>
                 </span>
@@ -72,6 +85,18 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 80px;
+    font-family: 'Nunito', sans-serif;
+    ${tw`
+        bg-dark
+    `}
+    
+    @media(max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `;
 const Logo = styled.img`
     width: 80px;
@@ -81,7 +106,6 @@ const NavMenu = styled.div`
     ${tw`
         lg:flex
         hidden
-        font-bold
     `}
 
     align-items: center;
@@ -98,11 +122,12 @@ const NavMenu = styled.div`
         display: flex;
         align-items: center;
         padding: 0 12px;
-        text-transform: uppercase;
 
         span{
-            color: rgb(249, 249, 249);
-            font-size: 15px;
+            ${tw`
+                text-white
+            `}
+            font-size: 18px;
             letter-spacing: 0.2px;
             line-height: 2px 0px;
             white-space: nowrap;
@@ -137,7 +162,8 @@ const NavMenu = styled.div`
 const MoblieNav = styled.div`
    ${tw`
         lg:hidden
-        bg-dark
+        bg-white
+        dark:bg-dark
         fixed
         w-full
         p-7
@@ -164,7 +190,10 @@ const MoblieNav = styled.div`
         padding: 0 12px;
         text-transform: uppercase;
         span{
-            color: rgb(249, 249, 249);
+            ${tw`
+                text-dark
+                dark:text-white
+            `}
             font-size: 15px;
             letter-spacing: 0.2px;
             line-height: 20px 0px;
@@ -172,7 +201,10 @@ const MoblieNav = styled.div`
             position: relative;
 
         &:before{
-            background-color: rgb(249, 249, 249);
+            ${tw`
+                bg-dark
+                dark:bg-white
+            `}
             border-radius: 0px 0px 4px 4px;
             bottom:  -6px;
             content: "";
@@ -199,21 +231,48 @@ const MoblieNav = styled.div`
     }
 `;
 const RightMenu = styled.div`
-    color:white;
     ${tw`
         flex
+        border-yellow
+        text-yellow
+        border-2
+        lg:border-none
+        text-xl
+        rounded-full
+        p-2
     `}
     span{
         ${tw`
             lg:hidden
+            ml-5
         `}
         cursor: pointer;
-        margin-left: 20px;
     }
+`;
+const ThemeWrap = styled.div`
+    ${tw`
+        items-center
+        mr-5
+        relative
+        flex
+    `}
+`;
+const Theme = styled.div`
+    ${tw`
+        rounded-full
+        absolute
+        lg:bg-yellow
+        lg:p-2
+        lg:text-dark
+        cursor-pointer
+    `}
 `;
 const CloseMobile = styled.div`
     margin-bottom: 40px;
-    color: white;
+    ${tw`
+        text-dark
+        dark:text-white
+    `}
     bottom: 0px;
     display: flex;
     justify-content: flex-end;
@@ -223,5 +282,4 @@ const CloseMobile = styled.div`
         font-size: x-large;
     }
 `;
-
 export default Header

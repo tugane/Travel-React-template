@@ -11,28 +11,28 @@ function Search() {
         });
     }, []);
     return (
-        <Wrap data-aos="fade-down">
-            <InputGroup data-aos="fade-down">
-                <input data-aos="fade-down" type="text" placeholder="Where to ?" />
-                <IconWrap data-aos="fade-down">
+        <Wrap>
+            <InputGroup>
+                <input type="text" placeholder="Where to ?" />
+                <IconWrap>
                     <FaMapMarkerAlt/>
                 </IconWrap>
             </InputGroup>
-            <InputGroup data-aos="fade-down">
-                <input data-aos="fade-down" type="date" placeholder="Date" />
+            <InputGroup>
+                <input type="date" placeholder="Date" />
             </InputGroup>
-            <InputGroup data-aos="fade-down">
-                <select data-aos="fade-down" placeholder="Travel Type">
+            <InputGroup>
+                <select placeholder="Travel Type">
                     <option>Travel Type</option>
                     <option>Travel 1</option>
                     <option>Travel 2</option>
                     <option>Travel 3</option>
                 </select>
-                <IconWrap data-aos="fade-down">
+                <IconWrap>
                     <FaCaretDown/>
                 </IconWrap>
             </InputGroup>
-            <SearchBtn data-aos="fade-down">
+            <SearchBtn>
                 Find Now
             </SearchBtn>
         </Wrap>
@@ -41,9 +41,11 @@ function Search() {
 const Wrap = styled.div`
     color:white;
     ${tw`
-        mt-2
+        mt-4
         p-4
         border-2 
+        border-dark
+        dark:border-white
         rounded-lg
         lg:flex
         w-full
@@ -63,12 +65,15 @@ const InputGroup = styled.div`
         lg:px-2
     `}
     input, select {
-        ::placeholder{
-            color: white;
-        }
         ${tw`
             bg-transparent
             border-2
+            border-dark
+            dark:border-white
+            placeholder-dark
+            dark:placeholder-white
+            text-dark
+            dark:text-white
             rounded-md
             py-2
             appearance-none
@@ -81,7 +86,13 @@ const InputGroup = styled.div`
             `
         }
         option{
-            color: black;
+            ${
+                tw`
+                    text-dark
+                    dark:text-white
+
+                `
+            }
         }
         ::-webkit-calendar-picker-indicator {
             filter: invert(1);
@@ -89,17 +100,18 @@ const InputGroup = styled.div`
     }
 `;
 const SearchBtn = styled.button`
-    color: #060b1d;
     ${
         tw`
             bg-yellow
             hover:bg-opacity-90
+            hover:shadow-lg
             lg:w-3/12
             w-full
             py-2
             px-5
             rounded-md
             font-bold
+            text-dark
             lg:mx-4
         `
     }
@@ -107,7 +119,8 @@ const SearchBtn = styled.button`
 const IconWrap = styled.div`
     ${
         tw`
-            text-white
+            text-dark
+            dark:text-white
             pointer-events-none 
             absolute 
             inset-y-0 

@@ -15,6 +15,7 @@ function PopularDestinations() {
             <SectionHeader title="Popular Destions" linkText="View all" />
             <DestinationWrap>
                 <Destination data-aos="fade-up" fullPage>
+                    <Overlay/>
                     <img src="/img/img (7).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
@@ -27,6 +28,7 @@ function PopularDestinations() {
                     </DetailWrap>
                 </Destination>
                 <Destination double data-aos="fade-up">
+                    <Overlay/>
                     <img src="/img/img (16).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
@@ -39,6 +41,7 @@ function PopularDestinations() {
                     </DetailWrap>
                 </Destination>
                 <Destination double data-aos="fade-left">
+                    <Overlay/>
                     <img src="/img/img (10).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
@@ -51,6 +54,7 @@ function PopularDestinations() {
                     </DetailWrap>
                 </Destination>
                 <Destination triple data-aos="zoom-in-right">
+                    <Overlay/>
                     <img src="/img/img (11).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
@@ -63,6 +67,7 @@ function PopularDestinations() {
                     </DetailWrap>
                 </Destination>
                 <Destination triple data-aos="fade-up">
+                    <Overlay/>
                     <img src="/img/img (15).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
@@ -75,6 +80,7 @@ function PopularDestinations() {
                     </DetailWrap>
                 </Destination>
                 <Destination triple data-aos="zoom-in-left">
+                    <Overlay/>
                     <img src="/img/img (19).jpg" alt="destination title"/>
                     <DetailWrap>
                         <TextWrap>
@@ -115,14 +121,15 @@ const Destination = styled.a`
     align-items: flex-end;
     display: flex;
     ${tw`
-    cursor-pointer
+        cursor-pointer
         rounded-lg
         hover:rounded-xl
+        hover:shadow-2xl
     `}
     
     &:hover{
-        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
-        rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        /* box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 73%) 0px 16px 10px -10px; */
         border: 4px solid #ffd700;
         transition-duration: 150ms;
         padding: 0;
@@ -132,7 +139,6 @@ const Destination = styled.a`
         object-fit: cover;
         ${tw`
             rounded-lg
-            opacity-70
             h-full
             w-full
         `}
@@ -158,6 +164,16 @@ const Destination = styled.a`
         `
     : false }
 `;
+const Overlay = styled.div`
+    ${tw`
+        w-full
+        h-full
+        absolute
+        bg-dark
+        bg-opacity-20
+        rounded-lg
+    `}
+`;
 const DetailWrap = styled.div`
     z-index: 3;
     position: absolute;
@@ -177,16 +193,14 @@ const TextWrap = styled.div`
 const Title = styled.h3`
     ${tw`
         font-bold
-        text-2xl
-        md:text-5xl
+        text-5xl
     `}
 `;
 const BottomTextWrap = styled.div`
     ${tw`
         flex
         justify-between
-        text-lg
-        md:text-2xl
+        text-2xl
     `}
 `;
 const Price = styled.h3`

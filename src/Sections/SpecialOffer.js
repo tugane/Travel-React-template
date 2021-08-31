@@ -20,7 +20,8 @@ function SpecialOffer() {
 const Container = styled.section`
     ${tw`
         pb-5
-        text-white
+        text-dark
+        dark:text-white
     `}
 `;
 const Wrap = styled.div`

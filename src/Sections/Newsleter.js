@@ -89,9 +89,9 @@ const TextWrap = styled.div`
     `}
     
     h4{
+        font-family: 'Nunito', sans-serif;
         ${tw`
             text-lg
-            font-bold
             lg:mb-4
         `}
     }
@@ -105,6 +105,7 @@ const TextWrap = styled.div`
     }
 `;
 const Form = styled.form`
+    font-family: 'Nunito', sans-serif;
     ${tw`
         flex
         relative

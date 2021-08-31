@@ -102,6 +102,7 @@ const InformationWrap = styled.div`
         items-center
     `}
     p{  
+    font-family: 'Nunito', sans-serif;
         ${tw`
             text-xl
             py-8
@@ -132,13 +133,14 @@ const ContactWrap = styled.div`
     h2{
         ${tw`
             mx-auto
-            text-3xl
+            text-4xl
             font-bold
             mb-8
         `}
     }
 `;
 const AddressWrap = styled.div`
+font-family: 'Nunito', sans-serif;
     ${tw`
         flex
         items-center
@@ -155,13 +157,14 @@ const QuickLinkWrap = styled.div`
     
     h2{
         ${tw`
-            text-3xl
+            text-4xl
             font-bold
             pb-8
         `}
     }
 `;
 const StyledLink = styled(Link)`
+font-family: 'Nunito', sans-serif;
     ${tw`
         block
         text-xl 
@@ -170,6 +173,7 @@ const StyledLink = styled(Link)`
     
 `;
 const CopyrightWriper= styled.div`
+font-family: 'Nunito', sans-serif;
     ${tw`
         pb-6
         px-10

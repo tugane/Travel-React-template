@@ -16,14 +16,20 @@ function Blog(props) {
     return (
         <Link to="#">
             <Wrap>
-                <Img  data-aos="fade-up" src={props.img}/>
+                <Overlay/>
+                <Img data-aos="fade-up" src={props.img}/>
                 <TitleWrap>
-                    <Title data-aos="fade-up" >{props.title}</Title>
+                    <Text>
+                        <Title data-aos="fade-up" >{props.title}</Title>
+                        <Description data-aos="fade-up" >{props.description}</Description>
+                    </Text>
                 </TitleWrap>
             </Wrap>
         </Link>
     )
 }
+const Text = styled.div`
+`;
 const Wrap = styled.div`
     height: 500px;
     ${tw`
@@ -31,7 +37,6 @@ const Wrap = styled.div`
         flex
         justify-center
         items-center
-        px-1
         hover:rounded-xl
     `}
     position: relative;
@@ -43,10 +48,21 @@ const Wrap = styled.div`
         padding: 0;
     }
 `;
+const Overlay = styled.div`
+    ${tw`
+        w-full
+        h-full
+        absolute
+        bg-dark
+        bg-opacity-40
+        rounded-lg
+    `}
+    z-index: 2;
+`;
 const Img = styled.img`
     ${tw`
         rounded-lg
-        opacity-60
+        dark:opacity-20
         h-full
     `}
     inset: 0px;
@@ -71,8 +87,16 @@ const TitleWrap = styled.div`
 const Title = styled.h3`
     ${tw`
         text-justify
-        text-lg
+        text-2xl
         font-bold
+        uppercase
+    `}
+`;
+const Description = styled.p`
+    font-family: 'Nunito', sans-serif;
+    ${tw`
+        text-justify
+        text-base
     `}
 `;
 export default Blog

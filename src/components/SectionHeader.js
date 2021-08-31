@@ -28,24 +28,26 @@ function SectionHeader(props) {
 }
 const TextAll = styled.a`
     ${tw`
-        text-base
-        text-white
+        text-lg
+        text-dark
+        dark:text-yellow
         cursor-pointer
     `}
 `;
 const TextWrap = styled.div`
     ${tw`
-        mt-8
         flex
         justify-between
+        py-6
         items-center
     `}
     
     h2{
         ${
             tw`
-                text-xl
-                text-white
+                text-3xl
+                text-dark
+                dark:text-yellow
                 font-bold
                 py-4
             `

@@ -15,11 +15,12 @@ import About from '../Sections/About';
 import Newsleter from '../Sections/Newsleter';
 import Footer from '../Sections/Footer';
 function Home() {
+
     return (
       <Router>
         <ContainerFluid>
+            <Header/>
             <Wrap>
-              <Header/>
               <ImgSlider/>
               <Search/>
               <SpecialOffer/>
@@ -41,14 +42,17 @@ const ContainerFluid = styled.main`
     antialiased 
     leading-loose
     tracking-wide
+    bg-white
+    dark:bg-dark
   `}
   
-  background-color: #060b1d;
   overflow-x: hidden;
-  top: 72px;
-
+  font-family: 'Prata', serif;
   *::selection{
     color: #ffd700;
+  }
+  *{
+    transition-duration: 150ms;
   }
 `;
 
@@ -56,7 +60,6 @@ const ContainerFluid = styled.main`
 const Wrap = styled.section`
   padding-left: 80px;
   padding-right: 80px;
-  padding-top: 30px;
   padding-bottom: 30px;
   
   @media(max-width: 768px) {

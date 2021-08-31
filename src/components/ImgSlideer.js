@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,11 +7,6 @@ import tw from "twin.macro";
 import AOS from 'aos';
 
 function ImgSlider (props) {
-  useEffect(() => {
-      AOS.init({
-          duration : 1000
-      });
-  }, []);
   let settings = {
     dots: false,
     infinite: true,
@@ -25,108 +20,81 @@ function ImgSlider (props) {
       <Wrap>
         <a>
           <TopSliderText>
-            <p data-aos="fade-up">Hot Places</p>
-            <h2 data-aos="fade-up">Mykonos Island</h2>
+            <p>Hot Places</p>
+            <h2>Mykonos Island</h2>
             <BottomSliderText>
               <TourDetail>
-                <p data-aos="fade-up">Price</p>
-                <h2 data-aos="fade-up">$ 720</h2>
-                <p data-aos="fade-up">7 days tour <span>for 3 person</span></p>
+                <p>Price</p>
+                <h2>$ 720</h2>
+                <p>7 days tour <span>for 3 person</span></p>
               </TourDetail>
               <TourDetail>
-                <p data-aos="fade-up">5 star</p>
-                <h2 data-aos="fade-up">Hotel</h2>
-                <p data-aos="fade-up">Hotels <span>of your choice</span></p>
+                <p>5 star</p>
+                <h2>Hotel</h2>
+                <p>Hotels <span>of your choice</span></p>
               </TourDetail>
               <TourDetail>
-                <p data-aos="fade-up">Flight date</p>
-                <h2 data-aos="fade-up">09</h2>
-                <p data-aos="fade-up">September <span>or letter</span></p>
+                <p>Flight date</p>
+                <h2>09</h2>
+                <p>September <span>or letter</span></p>
               </TourDetail>
             </BottomSliderText>
           </TopSliderText>
-          <img data-aos="fade-up" src="/img/img (17).jpg" alt="" />
+          <img src="/img/img (18).jpg" alt="" />
         </a>
       </Wrap>
 
       <Wrap>
         <a>
           <TopSliderText>
-            <p data-aos="fade-up">Hot Places</p>
-            <h2 data-aos="fade-up">Mykonos Island</h2>
+            <p>Hot Places</p>
+            <h2>Mykonos Island</h2>
             <BottomSliderText>
               <TourDetail>
-                <p data-aos="fade-up">Price</p>
-                <h2 data-aos="fade-up">$ 720</h2>
-                <p data-aos="fade-up">7 days tour <span>for 3 person</span></p>
+                <p>Price</p>
+                <h2>$ 720</h2>
+                <p>7 days tour <span>for 3 person</span></p>
               </TourDetail>
               <TourDetail>
-                <p data-aos="fade-up">5 star</p>
-                <h2 data-aos="fade-up">Hotel</h2>
-                <p data-aos="fade-up">Hotels <span>of your choice</span></p>
+                <p>5 star</p>
+                <h2>Hotel</h2>
+                <p>Hotels <span>of your choice</span></p>
               </TourDetail>
               <TourDetail>
-                <p data-aos="fade-up">Flight date</p>
-                <h2 data-aos="fade-up">09</h2>
-                <p data-aos="fade-up">September <span>or letter</span></p>
+                <p>Flight date</p>
+                <h2>09</h2>
+                <p>September <span>or letter</span></p>
               </TourDetail>
             </BottomSliderText>
           </TopSliderText>
-          <img data-aos="fade-up" src="/img/img (18).jpg" alt="" />
+          <img src="/img/img (13).jpg" alt="" />
         </a>
       </Wrap>
 
       <Wrap>
         <a>
           <TopSliderText>
-            <p data-aos="fade-up">Hot Places</p>
-            <h2 data-aos="fade-up">Mykonos Island</h2>
+            <p>Hot Places</p>
+            <h2>Mykonos Island</h2>
             <BottomSliderText>
               <TourDetail>
-                <p data-aos="fade-up">Price</p>
-                <h2 data-aos="fade-up">$ 720</h2>
-                <p data-aos="fade-up">7 days tour <span>for 3 person</span></p>
+                <p>Price</p>
+                <h2>$ 720</h2>
+                <p>7 days tour <span>for 3 person</span></p>
               </TourDetail>
               <TourDetail>
-                <p data-aos="fade-up">5 star</p>
-                <h2 data-aos="fade-up">Hotel</h2>
-                <p data-aos="fade-up">Hotels <span>of your choice</span></p>
+                <p>5 star</p>
+                <h2>Hotel</h2>
+                <p>Hotels <span>of your choice</span></p>
               </TourDetail>
               <TourDetail>
-                <p data-aos="fade-up">Flight date</p>
-                <h2 data-aos="fade-up">09</h2>
-                <p data-aos="fade-up">September <span>or letter</span></p>
+                <p>Flight date</p>
+                <h2>09</h2>
+                <p>September <span>or letter</span></p>
               </TourDetail>
             </BottomSliderText>
           </TopSliderText>
-          <img data-aos="fade-up" src="/img/img (13).jpg" alt="" />
-        </a>
-      </Wrap>
-
-      <Wrap>
-        <a>
-          <TopSliderText>
-            <p data-aos="fade-up">Hot Places</p>
-            <h2 data-aos="fade-up">Mykonos Island</h2>
-            <BottomSliderText>
-              <TourDetail>
-                <p data-aos="fade-up">Price</p>
-                <h2 data-aos="fade-up">$ 720</h2>
-                <p data-aos="fade-up">7 days tour <span>for 3 person</span></p>
-              </TourDetail>
-              <TourDetail>
-                <p data-aos="fade-up">5 star</p>
-                <h2 data-aos="fade-up">Hotel</h2>
-                <p data-aos="fade-up">Hotels <span>of your choice</span></p>
-              </TourDetail>
-              <TourDetail>
-                <p data-aos="fade-up">Flight date</p>
-                <h2 data-aos="fade-up">09</h2>
-                <p data-aos="fade-up">September <span>or letter</span></p>
-              </TourDetail>
-            </BottomSliderText>
-          </TopSliderText>
-          <img data-aos="fade-up" src="/img/img (19).jpg" alt="" />
+          <img src="/img/img (19).jpg" alt="" />
         </a>
       </Wrap>
     </Carousel>
@@ -207,7 +175,10 @@ const Wrap = styled.div`
 
     &:hover {
       padding: 0;
-      border: 4px solid rgba(249, 249, 249, 0.8);
+      border: 4px solid;
+      ${tw`
+        border-yellow
+      `}
       transition-duration: 150ms;
     }
   }
@@ -216,7 +187,7 @@ const Wrap = styled.div`
 const TopSliderText = styled.div`
   ${tw`
     w-full
-    p-3
+    p-10
     text-center
     items-center
     bg-dark
@@ -233,13 +204,13 @@ const TopSliderText = styled.div`
   p{
     ${tw`
       my-auto
-      text-xs
-      md:text-base
+      text-base
+      md:text-2xl
     `}
   }
   h2{
     ${tw`
-      lg:text-4xl
+      lg:text-5xl
       text-2xl
       my-auto
     `}

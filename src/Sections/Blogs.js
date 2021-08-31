@@ -9,9 +9,9 @@ function Blogs() {
         <Container>
             <SectionHeader title="Our Latest Blogs" linkText="View all"/>
             <Wrap>
-                <Blog title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui." img="/img/img (15).jpg"/>
-                <Blog title="Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." img="/img/img (1).jpg"/>
-                <Blog title="Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." img="/img/img (4).jpg"/>
+                <Blog title="Lorem ipsu" description="Lorem ipsum dolor sit amet, consectetur adipiscing elitnon proident, sunt in culpa qui adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." img="/img/img (15).jpg"/>
+                <Blog title="Adipiscing" description="Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sit amet, consectetur adipiscing elitnon proident, sunt in culpa qui." img="/img/img (1).jpg"/>
+                <Blog title="Consectetur" description="Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut  id est laborum lorem ipsum dolor sit amet, consectetur adipiscing elitnon proident, sunt in culpa." img="/img/img (4).jpg"/>
             </Wrap>
         </Container>
     )

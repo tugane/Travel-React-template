@@ -53,8 +53,8 @@ const Wrap = styled.div`
     }
     
     &:hover{
-        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
-        rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        box-shadow: rgb(0 0 0 / 49%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 30%) 0px 16px 10px -10px;
         border: 4px solid #ffd700;
         transition-duration: 150ms;
         padding: 0;
@@ -73,9 +73,9 @@ const TextWrap = styled.div`
         w-full
     `}
     h4{
+        font-family: 'Nunito', sans-serif;
         ${tw`
             text-xl
-            font-bold
             mb-4
         `}
     }
@@ -88,9 +88,9 @@ const TextWrap = styled.div`
     }
     p{
         max-width:600px;
+        font-family: 'Nunito', sans-serif;
         ${tw`
             text-lg
-            font-bold
             mb-4
         `}
     }

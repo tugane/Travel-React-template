@@ -30,7 +30,7 @@ function Offer(props) {
                 </ImgWrap>
                 <Title data-aos="fade-up">{props.location}, {props.country}</Title>
                 <Stars data-aos="fade-up">
-                    <ReactStars count={6} size={30} value={5} onChange={ratingChanged} activeColor="#ffd700"/>
+                    <ReactStars count={5} size={30} value={4} onChange={ratingChanged} activeColor="#ffd700"/>
                 </Stars>
                 <Price data-aos="fade-up">
                     $567
@@ -52,8 +52,6 @@ const ImgWrap = styled.div`
     height: calc(100% - 85px);
     
     &:hover{
-        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
-        rgb(0 0 0 / 73%) 0px 16px 10px -10px;
         border: 4px solid #ffd700;
         transition-duration: 150ms;
         padding: 0;
@@ -62,6 +60,7 @@ const ImgWrap = styled.div`
     ${tw`
         rounded-lg
         hover:rounded-xl
+        hover:shadow-xl
     `}
 `;
 const Img = styled.img`
@@ -77,10 +76,11 @@ const Img = styled.img`
     top: 0;
 `;
 const Title = styled.h3`
-    color: white;
     ${tw`
         pt-2
         text-xl
+        text-dark
+        dark:text-white
     `}
 `;
 const Stars = styled.div`
@@ -99,6 +99,8 @@ const Price = styled.h3`
     ${tw`
         text-xl
         font-bold
+        text-dark
+        dark:text-white
     `}
 `;
 export default Offer
