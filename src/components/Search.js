@@ -40,12 +40,13 @@ function Search() {
 }
 const Wrap = styled.div`
     color:white;
+    font-family: 'Nunito', sans-serif;
     ${tw`
         mt-4
+        text-sm
         p-4
-        border-2 
-        border-dark
-        dark:border-white
+        bg-dark
+        dark:bg-yellow
         rounded-lg
         lg:flex
         w-full
@@ -67,15 +68,14 @@ const InputGroup = styled.div`
     input, select {
         ${tw`
             bg-transparent
-            border-2
-            border-dark
-            dark:border-white
+            bg-white
+            dark:bg-dark
             placeholder-dark
             dark:placeholder-white
             text-dark
             dark:text-white
             rounded-md
-            py-2
+            py-4
             appearance-none
             w-full
             focus:outline-none
@@ -103,14 +103,16 @@ const SearchBtn = styled.button`
     ${
         tw`
             bg-yellow
-            hover:bg-opacity-90
-            hover:shadow-lg
+            dark:bg-dark
+            hover:shadow-2xl
             lg:w-3/12
             w-full
-            py-2
+            py-3
             px-5
+            text-lg
             rounded-md
             font-bold
+            dark:text-yellow
             text-dark
             lg:mx-4
         `

@@ -40,6 +40,7 @@ function Offer(props) {
     )
 }
 const Wrap = styled.div`
+    font-family: 'Nunito', sans-serif;
     height: 450px;
     ${tw`
         overflow-hidden

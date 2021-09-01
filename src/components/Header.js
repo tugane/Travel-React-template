@@ -89,8 +89,8 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 65px;
+    padding-right: 65px;
     height: 80px;
     font-family: 'Nunito', sans-serif;
     ${tw`
@@ -105,7 +105,7 @@ const Nav = styled.nav`
 `;
 const Logo = styled.img`
     width: 100px;
-    height: 40px;
+    height: 35px;
 `;
 
 const NavMenu = styled.div`
@@ -175,6 +175,7 @@ const MoblieNav = styled.div`
         w-full
         p-7
     `}
+    font-family: 'Nunito', sans-serif;
     z-index: 2;
     height: 100vh;
     top:0;

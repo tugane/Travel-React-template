@@ -90,7 +90,8 @@ const TextWrap = styled.div`
         max-width:600px;
         font-family: 'Nunito', sans-serif;
         ${tw`
-            text-lg
+            md:text-lg
+            text-sm
             mb-4
         `}
     }

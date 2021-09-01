@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import tw from "twin.macro";
-import AOS from 'aos';
 
 function ImgSlider (props) {
   let settings = {
@@ -131,16 +130,26 @@ const Carousel = styled(Slider)`
   }
 
   .slick-prev {
-    left: -75px;
+    &:before{
+      ${tw`
+        text-4xl
+      `}
+    }
+    left: 75px;
     @media(max-width: 768px) {
-      left: -10px;
+      left: 20px;
     }
   }
 
   .slick-next {
-    right: -75px;
+    &:before{
+      ${tw`
+        text-4xl
+      `}
+    }
+    right: 75px;
     @media(max-width: 768px) {
-      right: -5px;
+      right: 30px;
     }
   }
   
@@ -154,13 +163,14 @@ const Wrap = styled.div`
   a {
     ${tw`
       hover:shadow-2xl
+      lg:mx-16
+      mx-4
     `
     }
     border-radius: 16px;
     cursor: pointer;
     display: block;
     position: relative;
-    margin: 5px;
     max-height: calc(100vh - 120px);
     align-items: center;
     overflow: hidden;
@@ -188,7 +198,8 @@ const Wrap = styled.div`
 const TopSliderText = styled.div`
   ${tw`
     w-full
-    p-10
+    lg:p-10
+    py-16
     text-center
     items-center
     bg-dark
@@ -203,16 +214,15 @@ const TopSliderText = styled.div`
   align-items: center;
   line-height: 50px;
   p{
+    font-family: 'Nunito', sans-serif;
     ${tw`
       my-auto
-      text-base
-      md:text-2xl
+      text-2xl
     `}
   }
   h2{
     ${tw`
-      lg:text-5xl
-      text-2xl
+      text-4xl
       my-auto
     `}
     }
@@ -221,10 +231,11 @@ const TopSliderText = styled.div`
 const BottomSliderText = styled.div`
   ${tw`
     w-full
-    flex
+    lg:flex
+    hidden
     justify-between
     absolute inset-x-0 bottom-5
-    px-5
+    lg:px-5
   `
   }
   line-height: 20px;

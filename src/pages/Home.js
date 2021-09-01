@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled ,{createGlobalStyle} from 'styled-components';
 import Header from '../components/Header';
 import ImgSlider from '../components/ImgSlideer';
 import Search from '../components/Search';
@@ -20,8 +20,8 @@ function Home() {
       <Router>
         <ContainerFluid>
             <Header/>
+            <ImgSlider/>
             <Wrap>
-              <ImgSlider/>
               <Search/>
               <SpecialOffer/>
               <PopularDestinations/>
@@ -35,11 +35,17 @@ function Home() {
       </Router>
     )
 }
-
+createGlobalStyle`
+  body{
+    font-family: 'Prata', serif;
+    overflow: hidden;
+  }
+`;
 const ContainerFluid = styled.main`
   ${tw`
     font-mono
     antialiased 
+    overflow-hidden
     leading-loose
     tracking-wide
     bg-white
@@ -47,7 +53,6 @@ const ContainerFluid = styled.main`
   `}
   
   overflow-x: hidden;
-  font-family: 'Prata', serif;
   *::selection{
     color: #ffd700;
   }
@@ -58,8 +63,8 @@ const ContainerFluid = styled.main`
 
 
 const Wrap = styled.section`
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 65px;
+  padding-right: 65px;
   padding-bottom: 30px;
   
   @media(max-width: 768px) {
